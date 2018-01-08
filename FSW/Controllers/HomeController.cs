@@ -10,8 +10,10 @@ using System.Web.Mvc;
 
 namespace FSW.Controllers
 {
+    // qwe
     [RequireHttps]
     [Culture]
+    // test vlad
     public class HomeController : Controller
     {
         #region Start Bindings
