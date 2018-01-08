@@ -1,0 +1,1 @@
+﻿$(function(){$(document.body).on("appear",".feed",function(){$(this).addClass("appeared")}),$(".feed").appear({force_process:!0})});

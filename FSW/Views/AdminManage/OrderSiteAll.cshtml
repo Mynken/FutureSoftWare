@@ -1,0 +1,42 @@
+﻿@using FSW.Data.Entities
+@model FSW.Infrastructure.CustomListViewModel<OrderSite>
+@using FSW.HtmlHelpers
+@{
+    ViewBag.Title = "Все заявки на разработку";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Заявки на разработку</h2>
+
+<div class="panel-body">
+    <table class="table table-striped table-condensed table-bordered">
+        <tr>
+            <th class="text-center">Имя</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Тарифный план</th>
+            <th class="text-center">Доп. информация</th>
+            <th class="text-center">Действия</th>
+        </tr>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td class="text-center">@item.Name</td>
+                <td class="text-center">@item.Email</td>
+                <td class="text-center">@item.TariffPlan</td>
+                <td>@(item.Notes.Length >= 40 ? (item.Notes.Substring(0, 40) + "...") : item.Notes)</td>
+                <td class="text-center">
+                    @Html.ActionLink("Посмотреть полностю", "OrderDetails", new { item.id }, htmlAttributes: new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<div style="margin-bottom: 10px">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("OrderSiteAll", new { page = x }))
+</div>
+
+<div class="panel-footer">
+    @Html.ActionLink("На главную", "Start", null,
+                        new { @class = "btn btn-default" })
+</div>

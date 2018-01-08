@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Onky for admin</h2>
+<div>
+    <h4>Zmień ustawienia konta</h4>
+    <hr />
+    <dl class="dl-horizontal">       
+            <dt>Dodać admina:</dt>
+            <dd>
+                [ @Html.ActionLink("Add admin", "Register", "Account") ]
+            </dd>
+        </dl>
+    </div>

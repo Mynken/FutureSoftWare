@@ -1,0 +1,102 @@
+﻿@model FSW.Data.Entities.Feedback
+
+@{
+    ViewBag.Title = "Детали отзыва";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Детали отзыва</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="name">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.Review)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Review)
+        </dd>
+
+        <dt style="padding-bottom:10px">
+            Создан
+        </dt>
+        <dd>
+            @Model.CreatedTime.ToString().Substring(0, 10)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a class="btn btn-primary" style="margin-left: 178px;" onclick="window.history.go(-1);">Назад</a>
+    @if (!Model.isCheked)
+    {
+        <a href="javascript:void(0);" data-id="@Model.id" class="btn btn-success">В просмотренные</a>
+    }
+    @Html.ActionLink("Редактировать", "Edit", new { Model.id}, htmlAttributes: new { @class = "btn btn-warning" })
+        <a href="javascript:void(0);" data-id="@Model.id" class="btn btn-danger">Удалить</a>
+</p>
+@section Scripts {
+    <script>
+        $('.btn-success').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            if (confirm('Tak?')) {
+                $.ajax({
+                    url: '@Url.Action("FeedbackArchive")',
+                    type: 'POST',
+                    data: { id: $(this).data('id') }
+                }).done(function (data) {
+                    if (data.Result == "OK") {
+                        //$ctrl.closest('tr').remove();
+                        window.location.href = '/AdminManage/FeedbackIndex';
+                    }
+                    else if (data.Result.Message) {
+                        alert(data.Result.Message);
+                    }
+                }).fail(function () {
+                    alert("Error");
+                })
+
+            }
+        });
+    </script>
+
+    <script>
+        $('.btn-danger').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            if (confirm('Tak?')) {
+                $.ajax({
+                    url: '@Url.Action("DeleteFeedback")',
+                    type: 'POST',
+                    data: { id: $(this).data('id') }
+                }).done(function (data) {
+                    if (data.Result == "OK") {
+                        //$ctrl.closest('tr').remove();
+                        window.location.href = '/AdminManage/FeedbackAll';
+                    }
+                    else if (data.Result.Message) {
+                        alert(data.Result.Message);
+                    }
+                }).fail(function () {
+                    alert("Error");
+                })
+
+            }
+        });
+    </script>
+}

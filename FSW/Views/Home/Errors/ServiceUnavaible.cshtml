@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "ServiceUnavaible";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/error.css" />
+</head>
+<body>
+    <div class="error-image">
+        <img src="/Content/img/beast.png">
+    </div>
+    <hgroup class="error-hgroup">
+        <h1>503 SERVICE UNAVAILABLE</h1>
+        <h2>The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.</h2>
+
+        <div class="center">
+
+            <a href="/Home/Index">
+                <input type="button" value="Go home" class="cancel" id="submitbtn" style="color:white;" />
+            </a>
+        </div>
+    </hgroup>
+</body>
+</html>
+
+
+

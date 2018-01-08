@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Content/img/favicon.ico" />
+
+
+    <title>@ViewBag.Title - FSW</title>
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="~/Content/layout.css" />
+    <link rel="stylesheet" href="~/Content/keyframes.css" />
+    <link rel="stylesheet" href="~/Content/media.css" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!-- preloader -->
+    <style type="text/css">
+                #hellopreloader > p {
+                    display: none;
+                }
+
+                #hellopreloader_preload {
+                    display: block;
+                    position: fixed;
+                    z-index: 99999;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    min-width: 1000px;
+                    background: rgba(37, 8, 66, 0.5) url(/Content/img/loading.gif) center center no-repeat;
+                    background-size: 150px;
+                }
+    </style>
+
+    <div id="hellopreloader">
+        <div id="hellopreloader_preload">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var hellopreloader = document.getElementById("hellopreloader_preload");
+        function fadeOutnojquery(el) {
+            el.style.opacity = 1;
+            var interhellopreloader = setInterval(function () {
+                el.style.opacity = el.style.opacity - 0.05;
+                if (el.style.opacity <= 0.05) {
+                    clearInterval(interhellopreloader);
+                    hellopreloader.style.display = "none";
+                }
+            }, 16);
+        } window.onload = function () {
+            setTimeout(function () {
+                fadeOutnojquery(hellopreloader);
+            }, 1000);
+        };
+    </script>
+    <!-- preloader -->
+
+
+    <div>
+        @if (TempData["message"] != null)
+            {
+            <div class="alert alert-success" id="success-alert" style="margin-bottom:0px;">@TempData["message"]</div>
+        }
+    </div>
+    <div id="scroll-to-top" style="position:absolute; width: 100%; height: 0%; top: 0;"></div>
+    <div id="large-header" class="large-header">
+        <canvas id="demo-canvas"></canvas>
+    </div>
+    <div id="wraper" class="col-sm-12 col-md-12 col-lg-12">
+
+        <!-- class="button-up-styles disabled in-progress" -->
+        @if (IsSectionDefined("navigation"))
+        {   <div style="position:absolute; right:20px;">
+        @Html.Action("PartialButtonUp");
+    </div>
+    @RenderSection("navigation")
+        }
+
+        <div class="languages">
+            @using (Html.BeginForm("ChangeCulture", "Home"))
+            {
+                <select name="lang" onchange="this.form.submit()">
+                    <option disabled selected class="select-language">@Resources.Resource.ChooseLang</option>
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="pl">Polska</option>
+                </select>
+            }
+        </div>
+        <div id="home">
+            <div id="outer">
+                <div id="inner">
+                    <div id="deeper">
+                        <div id="wrap">
+                            <header id="masthead">
+                                <a href="/Home/Index" class="logo">
+                                    <div class="feed">
+                                        <img src="~/Content/img/LOGO1.png" alt="FutureSoftWare">
+                                        <p class="line-shadow-logo"></p>
+                                        <span>Web design <br /> FutureSoftWare</span>
+                                    </div>
+                                </a>
+                                <nav role="navigation">
+                                    <ul>
+                                        <li class="n-services">
+                                            <a href="/Home/PriceList">
+                                                <div class="feed top-one">
+                                                    <span>
+                                                        @Resources.Resource.Layout_LiButton_Services
+                                                        <strong>@Resources.Resource.Layout_LiButton_Services_more</strong>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="n-portfolio">
+                                            <a href="/Home/Gallery">
+                                                <div class="feed top-two">
+                                                    <span>
+                                                        @Resources.Resource.Layout_LiButton_Portfolio
+                                                        <strong>@Resources.Resource.Layout_LiButton_Portfolio_more</strong>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="n-team">
+                                            <a href="/Home/PriceList">
+                                                <div class="feed top-three">
+                                                    <span>
+                                                        @Resources.Resource.Layout_LiButton_Team
+                                                        <strong>@Resources.Resource.Layout_LiButton_Team_more</strong>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="n-blog">
+                                            <a href="/Home/About">
+                                                <div class="feed top-four">
+                                                    <span>
+                                                        @Resources.Resource.Layout_LiButton_Blog
+                                                        <strong>@Resources.Resource.Layout_LiButton_Blog_more</strong>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="n-contact">
+                                            <a href="/Home/Contacts">
+                                                <div class="feed top-five">
+                                                    <span>
+                                                        @Resources.Resource.Layout_LiButton_Contact
+                                                        <strong>@Resources.Resource.Layout_LiButton_Contact_more</strong>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="n-quote">
+                                            <a href="/Home/Feedback" class="quotebox">
+                                                <div class="feed top-six">
+                                                    <span>
+                                                        @Resources.Resource.Layout_LiButton_Qoute
+                                                        <strong>@Resources.Resource.Layout_LiButton_Qoute_more</strong>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </header>
+                        </div>
+                        <div class="launch">
+                            <div class="feed">
+                                <div class="launch_div1"></div>
+                                <div class="launch_div2">Programming is our passion</div>
+                                <div class="launch_div3"></div>
+                            </div>
+                        </div>
+                        <div class="name_of_company">
+                            <div class="feed">
+                                <h1 title="На главную"><a href="/Home/Index">FutureSoftWare</a></h1>
+                            </div>
+                        </div>
+                        @if (IsSectionDefined("askQuestion"))
+                        {
+                            @Html.Action("PartialAskQuestion");
+                            @RenderSection("askQuestion")
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="stock" title="Акции">
+                <a href="/Home/PriceList">
+                    <h3>
+                        акция!
+                    </h3>
+                    <p>
+                        <span>скидка 10%</span>
+                    </p>
+                    <p>
+                        на любой <br /> тарифный план
+                    </p>
+                </a>
+                <div class="ball-one"></div>
+                <div class="ball-two"></div>
+            </div>
+
+            @RenderBody()
+            <footer id="footer" class="col-xs-12 col-md-12 col-lg-12">
+                <div id="table">
+                    <div class="row">
+                        <span class="cell h"><h4>@Resources.Resource.Layout_AboutUs</h4></span>
+                        <hr>
+                        <span class="cell">
+                            <a href="/Home/PriceList">@Resources.Resource.Layout_AboutUs_News</a>
+                            <br />
+                            <a href="/Home/Feedback">@Resources.Resource.Layout_AboutUs_Feedbacks</a>
+                            <br />
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="cell h"><h4>@Resources.Resource.Layout_Services</h4></span>
+                        <hr>
+                        <span class="cell">
+                            <a href="/Home/PriceList">@Resources.Resource.Layout_Services_Develop</a>
+                            <br />
+                            <a href="/Home/PriceList">@Resources.Resource.Layout_Services_Promotion</a>
+                            <br />
+                            <a href="/Home/PriceList">@Resources.Resource.Layout_Services_Design</a>
+                            <br />
+                            <a href="/Home/PriceList">@Resources.Resource.Layout_Services_AddOffers</a>
+                            <br />
+                            <a href="/Home/Brief">@Resources.Resource.Layout_Services_Briefs</a>
+                        </span>
+                    </div>
+
+                    <div class="row">
+                        <span class="cell h"><h4>@Resources.Resource.Layout_Contacts</h4></span>
+                        <hr>
+                        <span class="cell">
+                            <a href="mailto:FutureSoftWare.fsw@gmail.com">FutureSoftWare.fsw@gmail.com</a>
+                            <br />
+                        </span>
+                        <span class="cell h"><h4>@Resources.Resource.Layout_Messengers</h4></span>
+                        <hr>
+                        <span class="cell" style="margin-bottom: 10px;">
+                            @Resources.Resource.Layout_Messengers_Call
+                        </span>
+                        <span class="cell">
+                            <a class="footer-viber" href="viber://chat?number=+48795043141" rel="nofollow">
+                                Viber
+                                <div class="footer-tooltip">Viber:<br>795 043 141</div>
+                            </a>
+                            <a class="footer-skype" href="skype:futuresoftware?chat" rel="nofollow">
+                                Skype
+                                <div class="footer-tooltip">Skype:<br>FutureSoftWare</div>
+                            </a>
+                        </span>
+                    </div>
+
+                    <div class="row">
+                        <span class="cell h"><h4>@Resources.Resource.Layout_Company</h4></span>
+                        <hr>
+                        <span class="cell">
+                            <a href="/Home/InDevelopment">@Resources.Resource.Layout_Company_Vacancies</a>
+                        </span>
+                    </div>
+                </div><!-- table -->
+                <section class="copy">
+                    <div class="div_copy">
+                        © @DateTime.Now.Year @Resources.Resource.Layout_Copyright
+                    </div>
+                </section>
+            </footer>
+
+        </div><!-- home -->
+    </div> <!-- wraper -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/custom")
+    @if (ViewBag.NotShow == null || !ViewBag.NotShow)
+    {
+        @Scripts.Render("~/bundles/Scrool")
+    }
+    @RenderSection("scripts", required: false)
+    <script>
+        $("#success-alert").fadeTo(5000, 500).slideUp(500, function () {
+            $("#success-alert").slideUp(500);
+        });
+    </script>
+
+
+
+</body>
+</html>

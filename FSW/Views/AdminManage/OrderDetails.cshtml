@@ -1,0 +1,89 @@
+﻿@model FSW.Data.Entities.OrderSite
+
+@{
+    ViewBag.Title = "Детали заявки на разработку";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Детали заявки на разработку</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.TariffPlan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TariffPlan)
+        </dd>
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a class="btn btn-primary" style="margin-left: 178px;" onclick="window.history.go(-1);">Назад</a>
+    @if (!Model.isCheked)
+    {
+        <a href="javascript:void(0);" data-id="@Model.id" class="btn btn-warning">В просмотренные</a>
+    }
+</p>
+@section Scripts {
+    <script>
+        $('.btn-warning').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            if (confirm('Tak?')) {
+                $.ajax({
+                    url: '@Url.Action("OrderArchive")',
+                    type: 'POST',
+                    data: { id: $(this).data('id') }
+                }).done(function (data) {
+                    if (data.Result == "OK") {
+                        //$ctrl.closest('tr').remove();
+                        window.location.href = '/AdminManage/OrderSiteIndex';
+                    }
+                    else if (data.Result.Message) {
+                        alert(data.Result.Message);
+                    }
+                }).fail(function () {
+                    alert("Error");
+                })
+
+            }
+        });
+    </script>
+}

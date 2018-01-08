@@ -1,0 +1,15 @@
+﻿<div class="tarifpad">
+    <div class="tarifbody">
+        @Html.Raw(Model)
+        <p>
+            <div class="center">
+                @Html.ActionLink("Заказать ", "OrderSite", new { text = "Сайт-визитка" }, htmlAttributes: new { @class = "ok", @id = "submitbtn" })                    
+            </div>
+        </p>
+    </div>
+</div>
+
+
+
+
+

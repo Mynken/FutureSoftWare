@@ -1,0 +1,1 @@
+﻿$(document).ready(function(){$("html, body").animate({scrollTop:$("#scrool").offset().top-20},1500)}),$(window).bind("mousewheel",function(){$("html, body").stop()});

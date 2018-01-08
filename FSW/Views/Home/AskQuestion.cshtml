@@ -1,0 +1,55 @@
+﻿@model FSW.Data.Entities.AskQuestion
+@{
+    ViewBag.Title = "AskQuestion";
+    // add Resources;
+}
+<link rel="stylesheet" href="~/Content/feedback_question.css" />
+<link rel="stylesheet" href="/Content/other-pages-shared-styles.css">
+<div class="other-site-full-body">
+
+<div class="other-site-pad">
+    <div id="w" class="other-site-form-to-fill">
+        <h2 class="h1-feedback-form" id="scrool">Ваш вопрос</h2>
+        @using (Html.BeginForm("AskQuestion", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+            <div class="row-feedback">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "row-label", @placeholder = "Имя" })
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "txt" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="row-feedback">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "row-label" })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "txt" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="row-feedback">
+                @Html.LabelFor(model => model.TextMessage, htmlAttributes: new { @class = "row-label" })
+                @Html.EditorFor(model => model.TextMessage, new { htmlAttributes = new { @class = "txtarea" } })
+                @Html.ValidationMessageFor(model => model.TextMessage, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="center">
+                <input type="submit" id="submitbtn" class="ok" name="submitbtn" tabindex="5" value="Отправить" style="color:white;">
+                <a href="/Home/Index">
+                    <input type="button" value="На главную" class="cancel" id="submitbtn" style="color:white;" />
+                </a>
+            </div>
+        }
+    </div>
+</div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @*<script>
+        var elem = document.getElementById("askquestion");
+        elem.style.display = "none";
+    </script>*@
+}
+

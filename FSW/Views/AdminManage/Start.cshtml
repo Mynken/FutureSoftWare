@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Главная";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Архив всех записей</h2>
+@Html.ActionLink("Вопросы", "QuestionAll", null, htmlAttributes: new { @class = "btn btn-primary"}) |
+@Html.ActionLink("Заявки", "OrderSiteAll", null, htmlAttributes: new { @class = "btn btn-primary"}) |
+@Html.ActionLink("Отзывы", "FeedbackAll", null, htmlAttributes: new { @class = "btn btn-primary"}) 
+
+

@@ -1,0 +1,61 @@
+﻿@model FSW.Data.Entities.Gallery
+
+@{
+    ViewBag.Title = "Детали продукта";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Детали отзыва</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.Desciption)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Desciption)
+        </dd>
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.FileName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileName)
+        </dd>     
+    </dl>
+</div>
+<p>
+    <a class="btn btn-primary" style="margin-left: 178px;" onclick="window.history.go(-1);">Назад</a>
+    @Html.ActionLink("Редактировать", "EditGallery", new { Model.id }, htmlAttributes: new { @class = "btn btn-warning" })
+    <a href="javascript:void(0);" data-id="@Model.id" class="btn btn-danger">Удалить</a>
+</p>
+@section Scripts {
+    <script>
+        $('.btn-danger').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            if (confirm('Tak?')) {
+                $.ajax({
+                    url: '@Url.Action("DeleteGallery")',
+                    type: 'POST',
+                    data: { id: $(this).data('id') }
+                }).done(function (data) {
+                    if (data.Result == "OK") {
+                        //$ctrl.closest('tr').remove();
+                        window.location.href = '/AdminManage/Gallery';
+                    }
+                    else if (data.Result.Message) {
+                        alert(data.Result.Message);
+                    }
+                }).fail(function () {
+                    alert("Error");
+                })
+
+            }
+        });
+    </script>
+}
+
+

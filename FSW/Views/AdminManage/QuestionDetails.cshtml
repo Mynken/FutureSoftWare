@@ -1,0 +1,70 @@
+﻿@model FSW.Data.Entities.AskQuestion
+
+@{
+    ViewBag.Title = "Детали вопроса";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Детали вопроса</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt style="padding-bottom:10px">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TextMessage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TextMessage)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a class = "btn btn-primary" style = "margin-left: 178px;" onclick="window.history.go(-1);">Назад</a>
+    @*@Html.ActionLink("Назад", "QuestionIndex", null, htmlAttributes: new { @class = "btn btn-primary", @style = "margin-left: 178px;" })*@
+    @if (!Model.isCheked)
+    {
+        <a href="javascript:void(0);" data-id="@Model.id" class="btn btn-warning">В просмотренные</a>
+    }
+</p>
+@section Scripts {
+
+    <script>
+        $('.btn-warning').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            if (confirm('Tak?')) {
+                $.ajax({
+                    url: '@Url.Action("QuestionArchive")',
+                    type: 'POST',
+                    data: { id: $(this).data('id') }
+                }).done(function (data) {
+                    if (data.Result == "OK") {
+                        //$ctrl.closest('tr').remove();
+                        window.location.href = '/AdminManage/QuestionIndex';
+                    }
+                    else if (data.Result.Message) {
+                        alert(data.Result.Message);
+                    }
+                }).fail(function () {
+                    alert("Error");
+                })
+
+            }
+        });
+    </script>
+}

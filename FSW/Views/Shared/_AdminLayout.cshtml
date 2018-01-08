@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - FSW</title>
+    @Styles.Render("~/AdminContent/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/moment")
+    <link rel="icon" type="image/x-icon" href="~/Content/img/favicon.ico" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Главная", "Start", "AdminManage", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Вопросы", "QuestionIndex", "AdminManage")</li>
+                        <li>@Html.ActionLink("Заявки", "OrderSiteIndex", "AdminManage")</li>
+                        <li>@Html.ActionLink("Отзывы", "FeedbackIndex", "AdminManage")</li>
+                        <li>@Html.ActionLink("Галерея", "Gallery", "AdminManage")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        }
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+        <footer>
+            <hr />
+            <p>© @DateTime.Now.Year - FutureSoftWare</p>
+        </footer>
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

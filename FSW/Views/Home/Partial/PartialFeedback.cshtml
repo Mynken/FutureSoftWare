@@ -1,0 +1,27 @@
+﻿@using FSW.Data.Entities
+@model FSW.Infrastructure.CustomListViewModel<Feedback>
+@using FSW.HtmlHelpers
+
+
+
+<div class="feedbacks">
+<h3>Отзывы</h3>
+            @foreach (var item in Model.Items)
+            {
+                <div class="feedback-form-users">
+                    <span>@Html.DisplayFor(modelItem => item.Name)</span>
+                    <span>@item.CreatedTime.ToString().Substring(0, 16)</span>
+
+                    <p class="feedback-form-users-message">
+                    @Html.DisplayFor(modelItem => item.Review)
+                    </p>
+                </div>
+
+            }
+</div>
+
+
+<div class="navigation-block">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("Feedback", new { page = x }))
+</div>
+

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSW", "FSW\FSW.csproj", "{920D3729-C8A5-4525-9013-BAE881160E41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSW.Data", "FSW.Data\FSW.Data.csproj", "{5027A11E-8313-4A93-9063-73EABBB71896}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{920D3729-C8A5-4525-9013-BAE881160E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{920D3729-C8A5-4525-9013-BAE881160E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{920D3729-C8A5-4525-9013-BAE881160E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{920D3729-C8A5-4525-9013-BAE881160E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5027A11E-8313-4A93-9063-73EABBB71896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5027A11E-8313-4A93-9063-73EABBB71896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5027A11E-8313-4A93-9063-73EABBB71896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5027A11E-8313-4A93-9063-73EABBB71896}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01598762-8991-4F4B-A9E2-AB8BF65D6B13}
+	EndGlobalSection
+EndGlobal

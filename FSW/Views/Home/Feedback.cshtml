@@ -1,0 +1,55 @@
+﻿@section askQuestion {}
+@model FSW.Data.Entities.Feedback
+@{
+    ViewBag.Title = "Feedback";
+    // add Resources
+}
+@section navigation {}
+<link rel="stylesheet" href="~/Content/form_add_coments.css" />
+<link rel="stylesheet" href="~/Content/other-pages-shared-styles.css" />
+
+<!-- <div class="line-background-shadow"></div> -->
+<div class="other-site-full-body">
+    <div class="other-site-pad">
+        <div class="other-site-body">
+            
+<aside class="coments-form-to-fill">
+<h3 id="scrool">ОСТАВИТЬ ОТЗЫВ</h3>
+            @using (Html.BeginForm("Feedback", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="row-feedback">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "row-label", @placeholder = "Имя" })
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "txt text-box single-line" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="row-feedback">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "row-label", @placeholder = "Фамилия" })
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "txt text-box single-line" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="row-feedback">
+                    @Html.LabelFor(model => model.Review, htmlAttributes: new { @class = "row-label" })
+                    @Html.EditorFor(model => model.Review, new { htmlAttributes = new { @class = "txtarea" } })
+                    @Html.ValidationMessageFor(model => model.Review, "", new { @class = "text-danger" })
+                </div>
+                <div class="center">
+                    <input type="submit" id="submitbtn" class="ok" name="submitbtn" value="Отправить" style="color:white;">
+                    <a href="/Home/Index">
+                        <input type="button" value="На главную" class="cancel" id="submitbtn" style="color:white;" />
+                    </a>
+                </div>
+            }
+</aside>
+            @Html.Action("PartialFeedback")
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval");
+    }
