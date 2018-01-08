@@ -10,8 +10,7 @@ using System.Web.Mvc;
 
 namespace FSW.Controllers
 {
-    //[RequireHttps]
-    //Test dima
+    [RequireHttps]
     [Culture]
     public class HomeController : Controller
     {
