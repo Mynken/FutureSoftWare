@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace FSW.Controllers
 {
-    //[RequireHttps]
+    [RequireHttps]
     [Culture]
     public class HomeController : Controller
     {
