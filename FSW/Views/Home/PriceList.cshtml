@@ -1,43 +1,44 @@
-﻿@section askQuestion {}
-<link rel="stylesheet" href="~/Content/priceList.css" />
+﻿<link rel="stylesheet" href="~/Content/priceList.css" />
 <link rel="stylesheet" href="/Content/other-pages-shared-styles.css">
 @{
-    ViewBag.Title = "pricelist";
+    ViewBag.Title = "Прайс-лист";
 }
-@section navigation {}
-
-
 
 <div class="other-site-full-body">
 <div class="other-site-pad">
 <div class="other-site-body">
-<h2 id="scrool">Акции</h2>
+@*<h2 id="scrool">Акции</h2>*@
 
 <div class="discount">
-    <img src="/Content/img/Banner-grey900x400.jpg">
+    <div class="discount-first-banner">
+    <img src="~/Content/img/banners/promotions/hosting.png">
+    </div>
 
-    <img src="/Content/img/Banner-grey600x400.jpg">
+    <div class="discount-second-banner">
+    <img src="~/Content/img/banners/promotions/banner10.png">
 
-    <img src="/Content/img/Banner-grey600x400.jpg">
+    <img src="~/Content/img/banners/promotions/monday.png">
+    </div>
 </div>
 
 
 
 <!-- <h2 class="main_title">Тарифные планы</h2> -->
-<h2>Тарифные планы</h2>
+<h2 id="scrool">Тарифные планы</h2>
 
 <div class="tarif">
     <div class="tarifpad">
         <div class="tarifbody">
             <h4>Сайт-визитка</h4>
+<p></p>
             <p>Красивый дизайн, современная верстка</p>
             <p>Система управления сайтом</p>
             <p>Размещение 5-7 страниц контента заказчика</p>
             <p>Поддержка в течении месяца(мелкие изменения)</p>
             <p></p>
-            <p>
-                Срок: от 10 дней <br />
-                Цена: от 100 $
+            <p class="last-price-p">
+                Срок: <strong> от 10 дней </strong> <br />
+                Цена: <strong> от 100 $ </strong>
             </p>
             <p>
                 <div class="center">
@@ -49,14 +50,15 @@
     <div class="tarifpad">
         <div class="tarifbody">
             <h4>Бизнес - сайт</h4>
+<p></p>
             <p>Отличный дизайн, современная верстка</p>
             <p>Система управления сайтом</p>
             <p>Первоначальная оптимизация контента</p>
             <p>Домен и хостинг по договорённости</p>
             <p>Поддержка в течении 2 месяцов</p>
-            <p>
-                Срок: от 15 дней <br />
-                Цена: от 200 $
+            <p class="last-price-p">
+                Срок: <strong> от 15 дней </strong> <br />
+                Цена: <strong> от 200 $ </strong>
             </p>
             <p>
                 <div class="center">
@@ -68,14 +70,15 @@
     <div class="tarifpad">
         <div class="tarifbody">
             <h4>Сайт компании</h4>
+<p></p>
             <p>Уникальный, профессиональный дизайн, современная верстка</p>
             <p>Система управления сайтом</p>
             <p>Разграничение ролей работников</p>
             <p>Домен и хостинг по договорённости</p>
             <p>Поддержка в течении 3 месяцов</p>
-            <p>
-                Срок: от 30 дней <br />
-                Цена: от 400 $
+            <p class="last-price-p">
+                Срок: <strong> от 30 дней </strong> <br />
+                Цена: <strong> от 400 $ </strong>
             </p>
             <p>
                 <div class="center">
@@ -89,14 +92,15 @@
     <div class="tarifpad">
         <div class="tarifbody">
             <h4>Landing Page</h4>
+<p></p>
             <p>Красивый дизайн, современная верстка</p>
             <p>Система управления сайтом</p>
             <p>Домен и хостинг по договорённости</p>
             <p>Поддержка в течении 2 месяцов</p>
             <p></p>
-            <p>
-                Срок: от 14 дней<br />
-                Цена: от 250 $
+            <p class="last-price-p">
+                Срок: <strong> от 14 дней </strong><br />
+                Цена: <strong> от 250 $ </strong>
             </p>
             <p>
                 <div class="center">
@@ -108,14 +112,15 @@
     <div class="tarifpad">
         <div class="tarifbody">
             <h4>Custom сайт</h4>
+<p></p>
             <p>Оговаривается с клиентов его задача и предлагается наилучшее решение</p>
             <p>Домен и хостинг по договорённости</p>
             <p>Отличный дизайн, современная верстка</p>
             <p>Первоначальная оптимизация контента</p>
             <p>Поддержка после запуска</p>
-            <p>
-                Срок: <a href="#">уточнить</a> <br />
-                Цена: <a href="#">уточнить</a>
+            <p class="last-price-p">
+                Срок: <a href="#"><strong>уточнить</strong></a> <br />
+                Цена: <a href="#"><strong>уточнить</strong></a>
             </p>
             <p>
                 <div class="center">
@@ -127,14 +132,15 @@
     <div class="tarifpad">
         <div class="tarifbody">
             <h4>Дополнительные услуги</h4>
+<p></p>
             <p>Услуги хостинга, домена ваших сайтов</p>
             <p>Услуги разарботки лого, фирменного стиля, создание PSD макета сайта</p>
             <p>Поддержка ваших сайтов</p>
             <p>Решение проблем / небольшие изменения/доработки ваших сайтов</p>
             <p></p>
-            <p>
-                Срок: <a href="#">уточнить</a> <br />
-                Цена: <a href="#">уточнить</a>
+            <p class="last-price-p">
+                Срок: <a href="#"><strong>уточнить</strong></a> <br />
+                Цена: <a href="#"><strong>уточнить</strong></a>
             </p>
             <p>
                 <div class="center">
@@ -147,3 +153,6 @@
 </div>
 </div>
 </div>
+
+    <script href="~/Scripts/Custom/buttonToUp.js"> </script> 
+    <script href="~/Scripts/Custom/buttonUp.js"> </script>

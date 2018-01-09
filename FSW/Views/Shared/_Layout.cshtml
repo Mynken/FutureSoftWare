@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="yandex-verification" content="375316213b901bc2" />
+    <meta name="description" content="futuresoftware - разработка интернет ресурсов под заказ">
     <link rel="shortcut icon" href="~/Content/img/favicon.ico" />
-
 
     <title>@ViewBag.Title - FSW</title>
     @Styles.Render("~/Content/css")
@@ -14,50 +15,6 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <!-- preloader -->
-    <style type="text/css">
-                #hellopreloader > p {
-                    display: none;
-                }
-
-                #hellopreloader_preload {
-                    display: block;
-                    position: fixed;
-                    z-index: 99999;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    min-width: 1000px;
-                    background: rgba(37, 8, 66, 0.5) url(/Content/img/loading.gif) center center no-repeat;
-                    background-size: 150px;
-                }
-    </style>
-
-    <div id="hellopreloader">
-        <div id="hellopreloader_preload">
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        var hellopreloader = document.getElementById("hellopreloader_preload");
-        function fadeOutnojquery(el) {
-            el.style.opacity = 1;
-            var interhellopreloader = setInterval(function () {
-                el.style.opacity = el.style.opacity - 0.05;
-                if (el.style.opacity <= 0.05) {
-                    clearInterval(interhellopreloader);
-                    hellopreloader.style.display = "none";
-                }
-            }, 16);
-        } window.onload = function () {
-            setTimeout(function () {
-                fadeOutnojquery(hellopreloader);
-            }, 1000);
-        };
-    </script>
-    <!-- preloader -->
-
 
     <div>
         @if (TempData["message"] != null)
@@ -71,13 +28,14 @@
     </div>
     <div id="wraper" class="col-sm-12 col-md-12 col-lg-12">
 
-        <!-- class="button-up-styles disabled in-progress" -->
-        @if (IsSectionDefined("navigation"))
-        {   <div style="position:absolute; right:20px;">
+
+        @*@if (IsSectionDefined("navigation"))
+{*@   
+    <div style="position:absolute; right:20px;">
         @Html.Action("PartialButtonUp");
     </div>
-    @RenderSection("navigation")
-        }
+    @*@RenderSection("navigation")
+        }*@
 
         <div class="languages">
             @using (Html.BeginForm("ChangeCulture", "Home"))
@@ -178,13 +136,13 @@
                         </div>
                         <div class="name_of_company">
                             <div class="feed">
+
                                 <h1 title="На главную"><a href="/Home/Index">FutureSoftWare</a></h1>
                             </div>
                         </div>
-                        @if (IsSectionDefined("askQuestion"))
+                        @if (ViewBag.AskQuestion == null || !ViewBag.AskQuestion)
                         {
                             @Html.Action("PartialAskQuestion");
-                            @RenderSection("askQuestion")
                         }
                     </div>
                 </div>
@@ -213,7 +171,13 @@
                         <span class="cell h"><h4>@Resources.Resource.Layout_AboutUs</h4></span>
                         <hr>
                         <span class="cell">
-                            <a href="/Home/PriceList">@Resources.Resource.Layout_AboutUs_News</a>
+                            <a href="/Home/AskQuestion">Задать вопрос</a>
+                            <br />                            
+                            <a href="/Home/Gallery">Галлерея</a>
+                            <br />
+                            <a href="/Home/About">О нас</a>
+                            <br />
+                            <a href="/Home/Contacts">Контакты</a>
                             <br />
                             <a href="/Home/Feedback">@Resources.Resource.Layout_AboutUs_Feedbacks</a>
                             <br />
@@ -285,6 +249,14 @@
         @Scripts.Render("~/bundles/Scrool")
     }
     @RenderSection("scripts", required: false)
+
+    <script>
+         $(".our-performed-works").html(function () {
+             var text = $(this).text().trim().split(" ");
+             var first = text.shift();
+             return (text.length > 0 ? "<span class='text-weight'>" + first + "</span> " : first) + text.join(" ");
+         });
+    </script>
     <script>
         $("#success-alert").fadeTo(5000, 500).slideUp(500, function () {
             $("#success-alert").slideUp(500);

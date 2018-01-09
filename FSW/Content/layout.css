@@ -17,28 +17,17 @@ option {
     padding: 0;
     margin: 0;
     border: 0;
-    color: transparent;
+    color: grey;
     width: 0;
     height: 0;
 }
 
-p {
-    font-size: 16px;
+a{
+    font-size: 14px;
 }
 
-span {
-    font-size: 16px;
-}
-
-ul {
-    font-size: 16px;
-}
-
-li {
-    font-size: 16px;
-}
-
-a {
+p, span, ul, li{
+    font-size: 18px;
     text-decoration: none;
 }
 
@@ -89,7 +78,7 @@ div#home {
 
 
 nav ul li {
-    width: 120px;
+    width: 13%;
     background: url(img/nav-ribbon.png) no-repeat;
     background-position: 50% -190px;
     list-style-type: none;
@@ -100,10 +89,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a span {
-    text-decoration: none;
-    background: url(img/nav-icons-ps.png) no-repeat 0 -15px;
-}
+
 
 nav ul .n-services {
     left: 0;
@@ -130,27 +116,27 @@ nav ul .n-quote {
 }
 
 nav ul .n-services a span {
-    background-position: 0 -15px;
+    background-position: 0 -13px;
 }
 
 nav ul .n-portfolio a span {
-    background-position: 0 -145px;
+    background-position: 0 -133px;
 }
 
 nav ul .n-team a span {
-    background-position: 0 -275px;
+    background-position: 0 -268px;
 }
 
 nav ul .n-blog a span {
-    background-position: 0 -405px;
+    background-position: 0 -400px;
 }
 
 nav ul .n-contact a span {
-    background-position: 0 -530px;
+    background-position: 0 -520px;
 }
 
 nav ul .n-quote a span {
-    background-position: 0 -663px;
+    background-position: 0 -650px;
 }
 
 nav ul li:hover {
@@ -189,27 +175,27 @@ nav ul .n-quote:hover a {
 }
 
 nav ul .n-services:hover span {
-    background-position: -120px -15px;
+    background-position: -120px -13px;
 }
 
 nav ul .n-portfolio:hover span {
-    background-position: -120px -145px;
+    background-position: -120px -133px;
 }
 
 nav ul .n-team:hover span {
-    background-position: -120px -275px;
+    background-position: -120px -268px;
 }
 
 nav ul .n-blog:hover span {
-    background-position: -120px -405px;
+    background-position: -120px -400px;
 }
 
 nav ul .n-contact:hover span {
-    background-position: -120px -530px;
+    background-position: -120px -520px;
 }
 
 nav ul .n-quote:hover span {
-    background-position: -120px -663px;
+    background-position: -120px -650px;
 }
 
 nav {
@@ -228,7 +214,7 @@ nav {
     }
 
         nav ul li {
-            width: 120px;
+            width: 13%;
             height: 100%;
             position: absolute;
             top: 0;
@@ -257,42 +243,46 @@ nav {
                 }
 
                 nav ul li a span {
+                    font-size: 18px;
                     display: block;
                     padding: 95px 0 0 0;
                     transition: background-position .3s ease-in-out .2s;
+                    text-decoration: none;
+                    background: url(img/nav-icons-ps.png) no-repeat 0 -15px;
                 }
+
+/*nav ul li a span {
+    text-decoration: none;
+    background: url(img/nav-icons-ps.png) no-repeat 0 -15px;
+} */
 
 header#masthead {
     height: 160px;
-    position: relative;
+    position: relative;  
+    text-align: center;
+    text-align: -webkit-center;
 }
 
-header .logo {
-    width: 260px;
-    left: 50%;
-    margin-left: -130px;
-    background: url(img/logo-ribbon.png) no-repeat 50% 100%;
-    padding: 10px 0 70px 0;
-}
 
-    header .logo span {
-        letter-spacing: 1px;
-        text-align: center;
-        padding: 0 0 0 0px;
-    }
+
 
 .logo img {
-    width: 80%;
-    height: 160px;
+    /* height: 160px; */
 }
 
 header .logo {
     display: block;
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -10px;
     z-index: 999;
     text-decoration: none;
     transition: padding-top .1s ease-in-out;
+    width: 21%;
+    /* left: 50%; */
+    /* margin-left: -100px; */
+    background: url(img/logo-ribbon.png) no-repeat 50% 100%;
+    background-size: 110%;
+    padding: 0px 0 55px 0;
 }
 
     header .logo:hover, header .on {
@@ -316,7 +306,10 @@ header .logo {
         font-size: 9px;
         color: #6CDFFF;
         text-decoration: none;
+        letter-spacing: 1px;
+        padding: 0 0 0 0px;
     }
+
 
 #demo-canvas {
     min-width: 100%;
@@ -339,7 +332,8 @@ header .logo {
 }
 
     .languages select {
-        min-width: 120px;
+    /*    min-width: 120px; */
+        font-size: 18px;
         width: 100%;
         max-width: 100%;
         padding: 3px 0;
@@ -373,13 +367,13 @@ header .logo {
 
         .stock {
     position: fixed;
-    left: -230px;
-    bottom: 100px;
-    width: 320px;
-    height: 150px;
+    left: -195px;
+    bottom: 110px;
+    width: 265px;
+    height: 130px;
     text-align: center;
-    background: url(img/banners/stock/Stock-image-bg-new-year-1.png);         /* новогодняя акция 1.0 */
-   /* background: url(img/Stock-image-bg.png);  */                               /* обычная акция     */
+    background: url(img/banners/stock/Stock-image-bg-new-year-1.png) no-repeat;
+    /* background: url(img/Stock-image-bg.png); */
     background-size: 100%;
     border-radius: 0 10px 10px 0;
     transition: 0.4s;
@@ -388,29 +382,40 @@ header .logo {
 }
 
 .stock a{
+position: relative;
+    /* margin: 20px; */
+    display: inherit;
+    text-align: -webkit-center;
     text-decoration: none;
 }
 
-.stock h3{
+.stock h3 {
+    position: relative;
     width: 100%;
     margin: 6% 0;
+    font-size: 20px;
     color: white;
+    display: -webkit-inline-box;
     font-family: sans-serif;
     font-weight: bold;
+    text-align: unset;
     text-transform: uppercase;
 }
 
-.stock p{
+.stock p {
     width: 100%;
     color: white;
-    font-size:13px;
+    font-size: 14px;
     font-weight: 900;
+    display: -webkit-inline-box;
     font-family: sans-serif;
     text-transform: uppercase;
+    position: relative;
+    /* text-align: right; */
 }
 
 .stock span{
-   font-size:16px;
+   font-size: 14px;
    color:yellow;
    font-weight: 900;
 }
@@ -427,7 +432,7 @@ header .logo {
 
 
 
-
+/*
 .stock:hover .ball-one{
     animation-duration: 1s;
     animation-name: animatedTransformball-one;
@@ -464,7 +469,7 @@ header .logo {
     background-size: 100%;
 }
 
-
+*/
 
 
 
@@ -479,10 +484,10 @@ header .logo {
 }
 
 .button-span {
-    font-size: 3vh;
+    font-size: 20px;
     font-weight: 900;
     color: white;
-    margin: 0px 3vh;
+    margin: 0px 10px;
     font-family: monospace;
     position: relative;
     vertical-align: -webkit-baseline-middle;
@@ -491,10 +496,10 @@ header .logo {
 .button-img {
     text-align: right;
     position: relative;
-    left: 0.3vh;
+    left: 2%;
     vertical-align: -webkit-baseline-middle;
-    width: 5vh;
-    height: 6vh;
+    width: 25px;
+    height: 30px;
 }
 
 .scroll-href {
@@ -511,8 +516,8 @@ header .logo {
     -o-transition: box-shadow 0.15s;
     transition: box-shadow 0.15s;
     border: 3px solid #2d929c;
-    height: 11vh;
-    width: 11vh;
+    height: 70px;
+    width: 70px;
     min-width: 60px;
     min-height: 60px;
     background: -moz-linear-gradient(top, #f6f5f0, #e1e0dc);
@@ -537,7 +542,7 @@ header .logo {
 
     .button-up-styles.disabled {
         color: #bdbbb9;
-        border: 1px solid #d3d3d3;
+        /* border: 1px solid #d3d3d3; */
         cursor: auto;
         text-shadow: white 0 1px 0;
         -webkit-box-shadow: white 0 1px 0 0 inset;
@@ -641,8 +646,8 @@ div#captioned-gallery {
 
     .slider img {
         width: 100%;
-        height: 100%;
-        max-height: 750px;
+        height: 700px;
+      /*  max-height: 750px; */
     }
 
     .slider .divv div {
@@ -663,63 +668,35 @@ div#captioned-gallery {
 
 
 
-a.FSW {
+p.FSW {
     position: relative;
+    display: -webkit-inline-box;
     text-decoration: none;
-    cursor: pointer;
-    -webkit-text-stroke: 1px #2989d8;
-}
-
-.h4_1 a:after {
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: linear-gradient(to left, rgba(251, 252, 0, 0.1), #d1ff00, #d1ff00, rgba(251, 252, 0, 0.1));
-    content: "";
-    transition: width 0.3s ease-out;
-}
-
-.h4_1 a:hover:after, .h4_1 a:focus:after {
-    width: 100%;
+    color: black;
+    font-size: 24px;
+    -webkit-text-stroke: 1px #ffffff;
 }
 
     .FSW {
     text-indent: 0px;
     color: white;
     font-weight: 700 Georgia, 'Times New Roman', Times, serif;
-    animation: pulse 5s infinite;
+   /* animation: pulse 5s infinite; */
 }
 
-    .FSW span:nth-child(1) {
-        font-size: 27px;
+.FSW span{
+        font-size: 24px;
         font-weight: 900;
         color: #241204;
         -webkit-text-stroke: 1px white;
         font-style: italic;
-    }
+}
 
-    .FSW span:nth-child(2) {
-        font-size: 27px;
-        font-weight: 900;
-        color: #241204;
-        -webkit-text-stroke: 1px white;
-        font-style: italic;
-    }
-
-    .FSW span:nth-child(3) {
-        font-size: 27px;
-        font-weight: 900;
-        color: #241204;
-        -webkit-text-stroke: 1px white;
-        font-style: italic;
-    }
-
+  
 
 
     div.swing {
-    font-size: 16px;
+    font-size: 24px;
     display: inline-block;
     position: relative;
     z-index: 9000;
@@ -773,7 +750,7 @@ a.FSW {
 }
 
 #adaptation {
-    width: 22%;
+    width: 100%;
     min-width: 250px;
     height: 50px;
     position: relative;
@@ -847,7 +824,7 @@ div.swing {
 }
 
 #control {
-    width: 22%;
+    width: 100%;
     min-width: 250px;
     height: 50px;
     position: relative;
@@ -958,10 +935,10 @@ div.swing {
         }
 
 #table {
+    text-align: -webkit-center;
     text-align: center;
     width: 100%;
     display: inline-table;
-    padding: 0 9% 0.5% 9%;
     overflow: hidden;
 }
 
@@ -969,19 +946,18 @@ div.swing {
     text-align: left;
     display: inline-table;
     margin: 0em 1% 3% 1%;
-    width: 21%;
+    width: 20%;
     vertical-align: top;
 }
 
 .h {
     min-width: 100%;
-    font-size: 1.6em;
     padding: 0;
 }
 
 .h h4 {
     color: #fff;
-    font-size: 3vh;
+    font-size: 24px;
     margin: 1em 0 -10px 0;
 }
 
@@ -993,7 +969,7 @@ div.swing {
     line-height: 1.5;
     display: table;
     color: #9d9fa1;
-    font-size: 2.1vh;
+    font-size: 16px;
 }
 
 #footer a.footer-viber, #footer a.footer-skype {
@@ -1144,6 +1120,17 @@ div.swing {
     text-align: center;
     color: #999;
     padding: 10px 0 10px 0;
-    font-size: 13px;
+    font-size: 12px;
     top: -15px;
 }
+
+
+
+
+
+
+
+
+
+
+

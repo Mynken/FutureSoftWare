@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace FSW.Controllers
 {
-    [RequireHttps]
+    //[RequireHttps]
     [Culture]
     public class HomeController : Controller
     {
@@ -223,16 +223,14 @@ namespace FSW.Controllers
         public ActionResult ChangeCulture(string lang)
         {
             string returnUrl = Request.UrlReferrer.AbsolutePath;
-            // Список культур
             List<string> cultures = new List<string>() { "ru", "en", "pl" };
             if (!cultures.Contains(lang))
             {
                 lang = "en";
             }
-            // Сохраняем выбранную культуру в куки
             HttpCookie cookie = Request.Cookies["lang"];
             if (cookie != null)
-                cookie.Value = lang;   // если куки уже установлено, то обновляем значение
+                cookie.Value = lang;
             else
             {
 
@@ -244,8 +242,6 @@ namespace FSW.Controllers
             Response.Cookies.Add(cookie);
             return Redirect(returnUrl);
         }
-
-
     }
 }
 

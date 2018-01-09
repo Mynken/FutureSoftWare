@@ -249,6 +249,9 @@
     <Content Include="Content\img\3.jpg" />
     <Content Include="Content\img\4.jpg" />
     <Content Include="Content\img\background_for_site_FSW.jpg" />
+    <Content Include="Content\img\banners\promotions\banner10.png" />
+    <Content Include="Content\img\banners\promotions\hosting.png" />
+    <Content Include="Content\img\banners\promotions\monday.png" />
     <Content Include="Content\img\banners\stock\ball-one.png" />
     <Content Include="Content\img\banners\stock\ball-two.png" />
     <Content Include="Content\img\banners\stock\Stock-image-bg-new-year-1.png" />
@@ -419,6 +422,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.en.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.pl.resx">
       <CustomToolNamespace>Resources</CustomToolNamespace>

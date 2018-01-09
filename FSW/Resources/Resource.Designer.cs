@@ -124,7 +124,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новости и акции.
+        ///   Looks up a localized string similar to Заказать сайт.
         /// </summary>
         public static string Layout_AboutUs_News {
             get {

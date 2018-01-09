@@ -1,21 +1,20 @@
 ﻿@using FSW.Data.Entities
 @model FSW.Infrastructure.CustomListViewModel<Gallery>
 @using FSW.HtmlHelpers
-@section navigation {}
-@section askQuestion {}
 @{
     ViewBag.Title = "Gallery";
     // add Resources
 }
-
-<link rel="stylesheet" href="~/Content/gallery.css">
 <link rel="stylesheet" href="/Content/other-pages-shared-styles.css">
+<link rel="stylesheet" href="~/Content/gallery.css">
 
 <!-- <section class="content"> -->
 
 <div id="blocks" class="other-site-full-body">
     <div class="other-site-pad">
-        <h2 id="scrool">наши работы</h2>
+        <div style="background-color:white; width: 500px; margin: 0 auto;">
+            <h2 id="scrool" style="margin-top:20px">наши работы</h2>
+        </div>
 
         <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
             @foreach (var item in Model.Items)

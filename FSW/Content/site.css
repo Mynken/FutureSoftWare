@@ -21,18 +21,17 @@
 }
 
     .button span {
-        font-weight: 600;
+        font-weight: 900;
+        font-size: 18px;
         text-transform: uppercase;
-        color: rgb(255, 255, 255);
+        color: white;
         display: inline-block;
         text-shadow: rgba(0, 0, 0, 0.6) 0px 2px 2px;
-        font-size: 1.1em;
-        line-height: 2.8em;
         box-shadow: rgba(255, 255, 255, 0.6) 1px 1px 0px inset,rgba(0, 0, 0, 0.8) 1px 1px 0px, rgba(255, 255, 255, 0) 0px 0px 20px 5px;
         background: -webkit-gradient(linear, 0% 100%, 0% 0%,from(rgb(13, 121, 164)), to(rgb(16, 167, 213))) rgb(20, 177, 222);
-        padding: 0px 40px;
-        border-radius: 25px;
+        border-radius: 50px;
         transition: all 0.2s ease-in-out;
+
     }
 
         .button span:hover {
@@ -55,12 +54,12 @@
 }
 
 .about {
-    margin: 0px 0 30px 0;
-    width: 80%;
-    font-size: 2.1vh;
-    padding: 20px 0 20px 20px;
-    border-left: 10px solid yellow;
-    color: white;
+    position: relative;
+    top: -80px;
+    width: 75%;
+    padding: 0 0 0 10px;
+    border-left: 10px solid #ff0;
+    color: #fff;
     text-align: justify;
 }
 
@@ -80,43 +79,47 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    text-align: -webkit-center;
     background: url(img/dpattern.jpg);
     box-shadow: inset 0px 0px 10px 1px black;
 }
 
 .bye_site {
-    margin-top: -360px;
-    position: absolute;
-    z-index: 2000;
+    position: relative;
+    width: auto;
+    max-width: 45%;
+    top: -360px;
+    z-index: 3000;
+    text-align: center;
 }
 
-.col-md-4 {
-    width: 30%;
-}
-
-.bye_site a.col-md-4 {
-    min-width: 600px;
-    width: 40%;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0;
-    opacity: 0.7;
-    border: 2px solid #d1b900;
-    text-decoration: none;
+.bye_site a.bye_site_button {
+    /* width: 100%; */
+    /* height: 100%; */
+    /* background: rgba(0,0,0,.5); */
+    /* padding: 0; */
+    /* opacity: .7; */
+    /* border: 2px solid #d1b900; */
+    text-decoration: none; 
 }
 
 .bye_site a h3 {
-    color: yellow;
+    color: #ff0;
     font-size: 24px;
     margin: 0;
     font-weight: 700;
     text-decoration: none;
     text-align: center;
-    padding: 10px;
-    line-height: 50px;
-    letter-spacing: 0em;
+    background: rgba(0,0,0,.5);
+    padding: 0;
+    opacity: .7;
+    border: 2px solid #d1b900;
+    text-decoration: none;
+    padding: 15px;
+    letter-spacing: 0;
 }
 
-.bye_site a:hover {
+.bye_site h3:hover {
     text-decoration: none;
     background: black;
     transition: 1s;
@@ -133,21 +136,22 @@
     .our_services .first_block div {
         vertical-align: top;
         display: inline-table;
-        color: #6AE1FF;
+        color: #ff0;
     }
 
     .our_services .first_block .column {
         position: inherit;
         width: 23%;
         font-size: 16px;
-        margin: 0 3em 1em 3em;
+        margin: 0 1em 1em 1em;
     }
 
     .our_services .first_block .h4_1 {
-        position: inherit;
-        font-size: 2em;
-        color: white;
-        margin: 0 0 10px 0;
+    position: inherit;
+    width: 100%;
+    font-size: 24px;
+    color: #fff;
+    margin: 0 0 30px 0;
     }
 
     .our_services .first_block .h4_2 {
@@ -164,7 +168,7 @@
         }
 
 #technologies {
-    width: 22%;
+    width: 100%;
     min-width: 250px;
     height: 50px;
     position: relative;
@@ -184,7 +188,7 @@
 }
 
 .our_services .first_block .p_1 {
-    font-size: 2.1vh;
+    font-size: 18px;
     margin: 0 0 3% 0;
 }
 
@@ -193,7 +197,7 @@
     position: absolute;
     width: 100%;
     left: 0%;
-    font-size: 2.1vh;
+    font-size: 18px;
     opacity: 0;
     top: -50px;    
     transition: all 1s;
@@ -244,14 +248,15 @@
     .our_services .second_block .consultation {
         position: relative;
         width: 100%;
-        max-height: 700px;
+        height: 700px;
        background:black;
     }
 
         .our_services .second_block .consultation img {
-            position: relative;
+            position: absolute;
             width: 100%;
-            max-height: 700px;
+            height: 100%;
+           /* max-height: 700px; */
             min-height: 400px;
             z-index: 1;
             opacity: 0.7;
@@ -259,10 +264,11 @@
 
         .our_services .second_block .consultation .p_2 {
             position: relative;
+            height: 100px;
+            top: 200px;
             text-align: center;
             overflow: hidden;
-            margin: -500px 0 380px 0;
-            font: 60px myfont, Arial;
+            font: 42px  myfont, Arial;
             z-index: 2000;
             font-weight: 600;
         }
@@ -274,11 +280,11 @@
 
         .our_services .second_block .consultation .p_3 {
             position: relative;
-            width: 80%;
+            height: 100px;
+            top: 250px;
             text-align: center;
             overflow: hidden;
-            margin: -300px 0 300px 0;
-            font: 30px 'Lobster', cursive;
+            font: 26px 'Lobster', cursive;
             z-index: 2000;
             color: white;
         }
@@ -298,7 +304,7 @@ a.our_services_second_block_a {
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
-    font: 20px myfont, Arial;
+    font: 16px myfont, Arial;
     z-index: 2000;
 }
 
@@ -327,66 +333,67 @@ a.our_services_second_block_a {
     box-shadow: inset 0px 0px 10px 1px black;
     margin: 0 0 0px 0px;
     padding: 20px 0;
+    text-align: -webkit-center;
+    text-align: center;
     width: 100%;
-    height: 100%;
 }
 
     .our_services .third_block div {
         background: transparent;
         box-shadow: none;
         vertical-align: top;
-        margin: 0 2em;
+        position: relative;
+        margin: 0 1em;
         display: inline-table;
-        width: 22%;
+        width: 23%;
     }
 
     .our_services .third_block .first_column {
         background: transparent;
         box-shadow: none;
-        display: inline-block;
+      /*  display: inline-block; */
     }
 
     .our_services .third_block .h4_1 {
         background: transparent;
         box-shadow: none;
-        font: 16px/1.6em Arial, Helvetica, sans-serif;
+        font: 24px Arial, Helvetica, sans-serif;
         letter-spacing: 6px;
+        text-align: center;
         color: yellow;
         margin: 0px 0 0px 0;
         padding-bottom: 0px;
     }
 
     .our_services .third_block .h4_3 {
-        background: transparent;
-        box-shadow: none;
-        height: 35px;
-        color: white;
-        font-size: 20px;
-        font-weight: 700;
-        margin: 0 0 30px 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 20px;
+    /* color: #fff; */
+    /* font-weight: 700; */
+    /* margin: 0 0 30px 0; */
     }
 
     .our_services .third_block .ul_4 {
         background: transparent;
         box-shadow: none;
         height: auto;
-        font-size: 2.1vh;
         list-style-type: circle;
         text-align: justify;
     }
 
 .our_services .third_block .ul_4 li{
-        font-size: 2.1vh;
+        font-size: 18px;
 }
 
         .our_services .third_block .ul_4 a {
-            font-size: 1.6vh;
+            font-size: 14px;
             text-decoration: none;
-            color: #6AE1FF;
+            color: yellow;
         }
 
             .our_services .third_block .ul_4 a:hover {
-                color: #378598;
+                color: #990;
             }
 
 .our_works {
@@ -395,7 +402,7 @@ a.our_services_second_block_a {
 }
 
 .our_works img{
-    height: 850px;
+    height: 700px;
     width: 100%;
     position: relative;
     display: list-item;
@@ -404,9 +411,8 @@ a.our_services_second_block_a {
 .launch {
     position: absolute;
     width: 100%;
-    margin: -22em 0;
+    top: 250px;
     text-align: center;
-    display: inline-table;
     color: white;
 }
 
@@ -437,8 +443,7 @@ a.our_services_second_block_a {
 .name_of_company {
     position: absolute;
     width: 100%;
-    top: 47%;
-    font-size: 8vw;
+    top: 300px;
     text-align: center;
     z-index: 2000;
 }
@@ -455,6 +460,7 @@ a.our_services_second_block_a {
         color: white;
         text-shadow: 1px 3px #09459E;
         padding: 0;
+        font-weight: 900;
         font-family: 'Lobster', cursive;
         text-decoration: none;
     }
@@ -483,12 +489,13 @@ div#services {
 }
 
 #services {
-    padding: 4.5em 0% 6px 0%;
+    padding: 60px 0% 6px 0%;
     text-align: center;  
 }
 
 div#home .serv-icon {
     position: absolute;
+    top: -125px;
     background: url(img/dpattern.jpg) no-repeat 0 0;
     border-radius: 50% 50%;
     border: 5px solid #0C8BD4;
@@ -512,17 +519,18 @@ div#home .serv-icon {
 }
 
     .serv-icon a {
-        display: inline-block;
-        height: 75px;
-        width: 75px;
-        text-indent: -999em;
-        margin: 7px auto 0 auto;
-        background: url(img/icons2.png) no-repeat;
-        padding: 0;
-        -webkit-transition: background-position .2s ease-in;
-        -moz-transition: background-position .2s ease-in;
-        -o-transition: background-position .2s ease-in;
-        transition: background-position .2s ease-in;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    text-indent: -999em;
+    margin: 7px auto 0 auto;
+    background: url(img/icons2.png) no-repeat;
+    background-size: 800%;
+    padding: 0;
+    -webkit-transition: background-position .2s ease-in;
+    -moz-transition: background-position .2s ease-in;
+    -o-transition: background-position .2s ease-in;
+    transition: background-position .2s ease-in;
     }
 
     .serv-icon .icon-web-design {
@@ -530,39 +538,39 @@ div#home .serv-icon {
     }
 
         .serv-icon .icon-web-design:hover {
-            background-position: 0 -75px;
+            background-position: 0 -86px;
         }
 
     .serv-icon .icon-web-dev {
-        background-position: -76px 0;
+        background-position: -85px 0px;
     }
 
         .serv-icon .icon-web-dev:hover {
-            background-position: -76px -75px;
+            background-position: -85px -86px;
         }
 
     .serv-icon .icon-mobile {
-        background-position: -150px 2px;
+    background-position: -167px 0;
     }
 
         .serv-icon .icon-mobile:hover {
-            background-position: -150px -73px;
+            background-position: -167px -85px;
         }
 
     .serv-icon .icon-multi {
-        background-position: -225px 3px;
+        background-position: -249px 0;
     }
 
         .serv-icon .icon-multi:hover {
-            background-position: -225px -72px;
+            background-position: -249px -83px;
         }
 
     .serv-icon .icon-cms {
-        background-position: -300px 3px;
+        background-position: -332px 0;
     }
 
         .serv-icon .icon-cms:hover {
-            background-position: -300px -72px;
+            background-position: -332px -82px;
         }
 
 .toggle {
@@ -629,7 +637,7 @@ div#home .serv-icon {
 }
 
 .toggle_1 {
-    display: table-cell;
+    display: inline-grid;
      height: 100%;
     margin: 0 0;
     position: relative;
@@ -656,10 +664,13 @@ section.clearfix-last {
 
 section.clearfix ul {
     text-align: justify;
-    font-size: 2vh;
     position: relative;
     padding: 0px;
     margin: 0;
+}
+
+section.clearfix ul a{
+font-size:18px;
 }
 
 section.clearfix li {
@@ -667,7 +678,6 @@ section.clearfix li {
     width: 100%;
     position: relative;
     list-style-type: none;
-    font-size: 2vh; 
 }
 
 section.clearfix p a {
@@ -748,12 +758,10 @@ div#home .serv-icon.on {
 
 #services p {
     padding: 0 0em;
-    font-size: 2vh;
     width: 95%; 
 }
 
 #services h4 {
-    font-size: 2.5vh;
     color: #fff;
     margin: 0 0 18px 0;
     font-weight: 300;
@@ -767,6 +775,7 @@ div#home .serv-icon.on {
     }
 
     #services h4 a {
+        font-size: 24px;
         color: #fff;
         position: relative;
     }
@@ -1351,3 +1360,17 @@ h4.h4-administration {
         opacity: 1;
         left: 0;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

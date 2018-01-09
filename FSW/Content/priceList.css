@@ -20,12 +20,30 @@
     margin: 0 0 70px 0;
 }
 
-.discount img{
+.discount-first-banner{
+    width:100%;
+}
+
+.discount-first-banner img{
+    width:100%;
+}
+
+.discount-second-banner{
+     width:100%;
+}
+
+.discount-second-banner img{
+     display: inline-block;
+     width: 49.7%;
+}
+
+.discount img {
     position: relative;
-    display: inline-block;
     height: auto;
 }
 
+
+/*
 .discount img:nth-child(1){
     width:100%;
 }
@@ -40,7 +58,7 @@
 .discount img:nth-child(4){
     width:100%;
 }
-
+*/
 
 .tarif {
     width: 100%;
@@ -72,20 +90,22 @@
 }
 
 .tarifbody {
-    height: 400px;
     padding: 0 1px;
     font-family: initial;
+    text-align: center;
+    text-align: -webkit-center;
 }
 
 .tarifbody h4 {
     background: rgba(6, 64, 111, 0.4);
-    height: 50px;
+    height: 12%;
     position: relative;
-    color: #ffffff;
-    text-shadow: 1px 2px #2b2b63;
+    color: #2b2b63;
+    text-shadow: 1px 1px #64a2ff;
     left: -1px;
     width: 101%;
-    padding: 7px 0;
+    font-weight: 900;
+    padding: 2% 0;
     margin: 0;
     text-align: -webkit-center;
 }
@@ -95,5 +115,14 @@
     }
 
     .tarifbody p {
-        min-height: 40px;
+        min-height: 42px;
     }
+
+.center{
+     margin: 0px 0;
+}
+
+.last-price-p {
+    width: fit-content;
+    text-align: left;
+}
