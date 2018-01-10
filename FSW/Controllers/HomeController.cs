@@ -38,7 +38,7 @@ namespace FSW.Controllers
             if (!Request.Browser.IsMobileDevice)
                 return View();
             else
-                return View("~/Views/Mobile/MobileTest.cshtml");
+                return View("~/Views/Mobile/Index.cshtml");
         }
         public ActionResult About()
         {            
