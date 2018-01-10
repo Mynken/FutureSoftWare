@@ -41,8 +41,11 @@ namespace FSW.Controllers
                 return View("~/Views/Mobile/Index.cshtml");
         }
         public ActionResult About()
-        {            
-            return View();
+        {
+            if (!Request.Browser.IsMobileDevice)
+                return View();
+            else
+                return View("~/Views/Mobile/About.cshtml");
         }
         public ActionResult Contacts()
         {

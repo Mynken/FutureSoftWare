@@ -42,6 +42,10 @@ namespace FSW
                       "~/Content/family.css",
                       "~/Content/site.css"));
 
+            bundles.Add(new StyleBundle("~/Content/mobileCss").Include(
+                    "~/Content/bootstrap.css",
+                      "~/Content/mobile/site.css"));
+
             bundles.Add(new StyleBundle("~/AdminContent/css").Include(
                      "~/Content/bootstrap.css",
                       "~/Content/admin.css"));

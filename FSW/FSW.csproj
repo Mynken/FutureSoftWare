@@ -309,6 +309,7 @@
     <Content Include="Content\keyframes.css" />
     <Content Include="Content\layout.css" />
     <Content Include="Content\media.css" />
+    <Content Include="Content\mobile\site.css" />
     <Content Include="Content\other-pages-shared-styles.css" />
     <Content Include="Content\our_contacts.css" />
     <Content Include="Content\priceList.css" />
@@ -396,10 +397,11 @@
     <Content Include="Views\AdminManage\EditGallery.cshtml" />
     <Content Include="Views\AdminManage\CreateGallery.cshtml" />
     <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
-    <Content Include="Views\Mobile\MobileTest.cshtml" />
     <Content Include="Views\Mobile\Contacts.cshtml" />
     <Content Include="Views\Home\Errors\Forbidden.cshtml" />
     <Content Include="Views\Home\Errors\ServiceUnavaible.cshtml" />
+    <Content Include="Views\Mobile\Index.cshtml" />
+    <Content Include="Views\Mobile\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
