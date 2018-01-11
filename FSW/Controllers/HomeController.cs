@@ -221,7 +221,10 @@ namespace FSW.Controllers
                     TotalItems = galleryRepository.Galleries.Count()
                 }
             };
-            return View(model);
+            if (!Request.Browser.IsMobileDevice)
+                return View(model);
+            else
+                return View("~/Views/Mobile/Gallery.cshtml", model);
         }
         public ActionResult ChangeCulture(string lang)
         {

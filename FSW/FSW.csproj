@@ -402,6 +402,7 @@
     <Content Include="Views\Home\Errors\ServiceUnavaible.cshtml" />
     <Content Include="Views\Mobile\Index.cshtml" />
     <Content Include="Views\Mobile\About.cshtml" />
+    <Content Include="Views\Mobile\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
